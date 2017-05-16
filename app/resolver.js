@@ -1,3 +1,6 @@
-import Resolver from 'ember-resolver';
-
-export default Resolver;
+/**
+ * The Ember resolver.
+ *
+ * @module
+ */
+export { default } from 'ember-resolver';
