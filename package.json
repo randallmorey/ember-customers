@@ -1,21 +1,33 @@
 {
   "name": "ember-customers",
   "version": "0.0.0",
-  "description": "Small description for ember-customers goes here",
+  "description": "A demonstration app with simple CRUD features for customer records",
   "license": "MIT",
-  "author": "",
+  "author": "randall@randallmorey.com",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/randallmorey/ember-customers",
   "scripts": {
+    "commit": "git-cz",
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "2.13.1",
     "ember-cli-app-version": "^3.0.0",
@@ -35,10 +47,12 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.13.0",
     "ember-welcome-page": "^3.0.0",
-    "loader.js": "^4.2.3"
+    "ghooks": "^2.0.0",
+    "git-repo-info": "^1.4.1",
+    "loader.js": "^4.2.3",
+    "semantic-release-cli": "^3.0.3"
   },
   "engines": {
     "node": ">= 4"
-  },
-  "private": true
+  }
 }
