@@ -1,5 +1,11 @@
 # ember-customers
 
+[![Travis](https://img.shields.io/travis/randallmorey/ember-customers.svg?style=flat-square)](https://travis-ci.org/randallmorey/ember-customers)
+[![Coveralls](https://img.shields.io/coveralls/randallmorey/ember-customers.svg?style=flat-square)](https://coveralls.io/github/randallmorey/ember-customers)
+[![David](https://img.shields.io/david/dev/randallmorey/ember-customers.svg?style=flat-square)](https://github.com/randallmorey/ember-customers)
+[![Inline docs](https://inch-ci.org/github/randallmorey/ember-customers.svg?branch=master&style=flat-square)](http://inch-ci.org/github/randallmorey/ember-customers)
+[![Ember 2.13.1](https://img.shields.io/badge/ember-2.13.1-blue.svg?style=flat-square)](https://github.com/ember-cli/ember-cli/tree/v2.13.1)
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 

@@ -14,6 +14,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
+    "test-with-coverage": "COVERAGE=true npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
@@ -27,11 +28,13 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "commitizen": "^2.9.6",
+    "coveralls": "^2.13.1",
     "cz-conventional-changelog": "^2.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "2.13.1",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.0.0",
+    "ember-cli-code-coverage": "^0.3.12",
     "ember-cli-dependency-checker": "^1.3.0",
     "ember-cli-eslint": "^3.0.0",
     "ember-cli-htmlbars": "^1.1.1",
