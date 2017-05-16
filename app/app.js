@@ -7,6 +7,12 @@ let App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
+/**
+ * The Ember application.
+ *
+ * @module
+ * @augments ember/Application
+ */
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
