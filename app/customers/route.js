@@ -14,7 +14,7 @@ export default Ember.Route.extend({
    *
    * @override
    * @function
-   * @returns {module:app/customer/model}
+   * @returns Array of {module:app/customer/model}
    */
   model() {
     return this.store.findAll('customer');

@@ -1,13 +1,15 @@
 <ul>
   {{#each model as |customer|}}
     <li>
-      {{customer.name}} /
-      {{customer.email}} /
-      {{customer.tel}} <br>
-      {{customer.streetAddress}}
-      {{customer.locality}}
-      {{customer.region}}
-      {{customer.postalCode}}
+      {{#link-to 'customers.customer' customer}}
+        {{customer.name}} /
+        {{customer.email}} /
+        {{customer.tel}} <br>
+        {{customer.streetAddress}}
+        {{customer.locality}}
+        {{customer.region}}
+        {{customer.postalCode}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>
