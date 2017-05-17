@@ -1,0 +1,13 @@
+<ul>
+  {{#each model as |customer|}}
+    <li>
+      {{customer.name}} /
+      {{customer.email}} /
+      {{customer.tel}} <br>
+      {{customer.streetAddress}}
+      {{customer.locality}}
+      {{customer.region}}
+      {{customer.postalCode}}
+    </li>
+  {{/each}}
+</ul>

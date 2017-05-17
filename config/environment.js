@@ -20,7 +20,7 @@ module.exports = function(environment) {
     },
 
     api: {
-      host: 'http://0.0.0.0:3000',
+      host: null,
       namespace: 'api'
     }
   };
