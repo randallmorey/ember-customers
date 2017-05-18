@@ -26,4 +26,5 @@ export default function () {
   */
 
   this.get('/customers');
+  this.patch('/customers/:id');
 }
