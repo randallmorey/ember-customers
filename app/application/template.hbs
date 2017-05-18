@@ -3,7 +3,9 @@
     <div class="col">
 
       <nav class="navbar navbar-light bg-faded mb-4">
-        <a class="navbar-brand" href="/">Customers App</a>
+        {{#link-to 'application' class='navbar-brand'}}
+          Customers App
+        {{/link-to}}
       </nav><!-- /.navbar -->
 
       {{outlet}}

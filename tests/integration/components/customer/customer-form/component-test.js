@@ -51,19 +51,12 @@ test('it updates underlaying instance based on input', function (assert) {
     this.render(hbs`{{customer/customer-form customer=customer}}`);
     // fill out the form and force an onchange
     this.$('[name="name"]').val('John Doe').change();
-    //this.$('[name="email"]').change();
     this.$('[name="email"]').val('john@doe.com').change();
-    //this.$('[name="email"]').change();
     this.$('[name="tel"]').val('+18001234567').change();
-    //this.$('[name="tel"]').change();
     this.$('[name="streetAddress"]').val('1 Main St').change();
-    //this.$('[name="streetAddress"]').change();
     this.$('[name="locality"]').val('Pleasantville').change();
-    //this.$('[name="locality"]').change();
     this.$('[name="region"]').val('PV').change();
-    //this.$('[name="region"]').change();
     this.$('[name="postalCode"]').val('0001').change();
-    //this.$('[name="postalCode"]').change();
 
     // test that changes propogate to underlaying instance
     assert.equal(customer.name, 'John Doe');
