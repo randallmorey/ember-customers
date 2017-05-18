@@ -11,15 +11,17 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       },
-      EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+      EXTEND_PROTOTYPES: false
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    api: {
+      host: null,
+      namespace: 'api'
     }
   };
 
@@ -29,6 +31,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-cli-mirage'] = {
+      //enabled: false
+    };
   }
 
   if (environment === 'test') {

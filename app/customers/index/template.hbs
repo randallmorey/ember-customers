@@ -1,0 +1,25 @@
+<div class="list-group">
+
+  <li class="list-group-item disabled">
+    <small>Browse customers</small>
+  </li><!-- /.list-group-item -->
+
+  {{#each model as |customer|}}
+    {{#link-to 'customers.customer' customer class='list-group-item list-group-item-action'}}
+      <div class="d-flex w-100 justify-content-between">
+        <h1 class="h5 mb-1">{{customer.name}}</h1>
+      </div>
+      <p class="mb-1">
+        {{customer.email}}
+        {{customer.tel}}
+      </p>
+      <small>
+        {{customer.streetAddress}},
+        {{customer.locality}},
+        {{customer.region}}
+        {{customer.postalCode}}
+      </small>
+    {{/link-to}}<!-- /.list-group-item -->
+  {{/each}}
+
+</div><!-- /.list-group -->
