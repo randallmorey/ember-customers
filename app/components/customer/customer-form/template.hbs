@@ -1,0 +1,110 @@
+<form {{action 'submit' on='submit'}}>
+
+  <div class="form-group{{if customer.errors.name ' has-danger'}}">
+    <label for='name' class='form-control-label'>Name</label>
+    {{input
+      name='name'
+      value=customer.name
+      type='text'
+      id='name'
+      class=(concat 'form-control'
+        (if customer.errors.name ' form-control-danger'))
+      aria-describedby='nameHelp'}}
+    {{#each customer.errors.name as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+    <small id="nameHelp" class="form-text text-muted">
+      Customer's full name.
+    </small>
+  </div><!-- /.form-group -->
+
+  <div class="form-group{{if customer.errors.email ' has-danger'}}">
+    <label for='email' class='form-control-label'>Email</label>
+    {{input
+      name='email'
+      value=customer.email
+      type='email'
+      id='email'
+      class=(concat 'form-control'
+        (if customer.errors.email ' form-control-danger'))}}
+    {{#each customer.errors.email as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+  </div><!-- /.form-group -->
+
+  <div class="form-group{{if customer.errors.tel ' has-danger'}}">
+    <label for='tel' class='form-control-label'>Phone</label>
+    {{input
+      name='tel'
+      value=customer.tel
+      type='text'
+      id='tel'
+      class=(concat 'form-control'
+        (if customer.errors.tel ' form-control-danger'))
+      aria-describedby='telHelp'}}
+    {{#each customer.errors.tel as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+    <small id="nameHelp" class="form-text text-muted">
+      Telephone number including country code.
+    </small>
+  </div><!-- /.form-group -->
+
+  <div class="form-group{{if customer.errors.streetAddress ' has-danger'}}">
+    <label for='streetAddress' class='form-control-label'>Phone</label>
+    {{input
+      name='streetAddress'
+      value=customer.streetAddress
+      type='text'
+      id='streetAddress'
+      class=(concat 'form-control'
+        (if customer.errors.streetAddress ' form-control-danger'))}}
+    {{#each customer.errors.streetAddress as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+  </div><!-- /.form-group -->
+
+  <div class="form-group{{if customer.errors.locality ' has-danger'}}">
+    <label for='locality' class='form-control-label'>Phone</label>
+    {{input
+      name='locality'
+      value=customer.locality
+      type='text'
+      id='locality'
+      class=(concat 'form-control'
+        (if customer.errors.locality ' form-control-danger'))}}
+    {{#each customer.errors.locality as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+  </div><!-- /.form-group -->
+
+  <div class="form-group{{if customer.errors.region ' has-danger'}}">
+    <label for='region' class='form-control-label'>Phone</label>
+    {{input
+      name='region'
+      value=customer.region
+      type='text'
+      id='region'
+      class=(concat 'form-control'
+        (if customer.errors.region ' form-control-danger'))}}
+    {{#each customer.errors.region as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+  </div><!-- /.form-group -->
+
+  <div class="form-group{{if customer.errors.postalCode ' has-danger'}}">
+    <label for='postalCode' class='form-control-label'>Phone</label>
+    {{input
+      name='postalCode'
+      value=customer.postalCode
+      type='text'
+      id='postalCode'
+      class=(concat 'form-control'
+        (if customer.errors.postalCode ' form-control-danger'))}}
+    {{#each customer.errors.postalCode as |error|}}
+      <div class="form-control-feedback">{{error.message}}</div>
+    {{/each}}
+  </div><!-- /.form-group -->
+
+  <button type="submit" class="btn btn-outline-primary">Save</button>
+</form>
