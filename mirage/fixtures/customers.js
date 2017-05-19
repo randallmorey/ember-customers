@@ -1,32 +1,17 @@
-export default [
-  {
-    "id": 1,
-    "name": "Hannah Abbott",
-    "email": "hannah.abbott@hufflepuff.org",
-    "tel": "+1 800 123 4567",
-    "streetAddress": "1 Main St",
-    "locality": "Villagandria",
-    "region": "ME",
-    "postalCode": "12345"
-  },
-  {
-    "id": 2,
-    "name": "Katie Bell",
-    "email": "katie.bell@gryffindor.org",
-    "tel": "+1 888 123 4567",
-    "streetAddress": "2 Main St",
-    "locality": "Somewheringtonshire",
-    "region": "NH",
-    "postalCode": "01234"
-  },
-  {
-    "id": 3,
-    "name": "Michael Corner",
-    "email": "michael.corner@ravenclaw.org",
-    "tel": "+1 899 123 4567",
-    "streetAddress": "3 Main St",
-    "locality": "Hamlette",
-    "region": "VT",
-    "postalCode": "56789-0001"
+const data = [
+  [1, 'Hannah Abbott', 'hannah.abbott@hufflepuff.org', '+1 800 123 4567', '1 Main St', 'Villagandria', 'ME', '12345'],
+  [2, 'Katie Bell', 'katie.bell@gryffindor.org', '+1 888 893 2094', '2 Any Rd', 'Somewheringtonshire', 'NH', '48391'],
+  [3, 'Michael Corner', 'michael.corner@ravenclaw.org', '+1 899 920 3851', '3 Some Dr', 'Hamlette', 'VT', '34893-0001']
+]
+export default data.map((d) => {
+  return {
+    id: d[0],
+    name: d[1],
+    email: d[2],
+    tel: d[3],
+    streetAddress: d[4],
+    locality: d[5],
+    region: d[6],
+    postalCode: d[7]
   }
-];
+});

@@ -17,6 +17,7 @@ test('viewing validation errors', function (assert) {
   fillIn('[name="postalCode"]', '1');
   click('button[type="submit"]');
   andThen(function () {
+    assert.equal(currentURL(), '/customers/1/edit');
     assert.equal(find('.form-group.has-danger:visible').length, 3);
     assert.equal(find('.form-group:eq(0) .form-control-feedback').text(), 'can\'t be blank');
     assert.equal(find('.form-group:eq(1) .form-control-feedback').text(), 'is not a valid email');

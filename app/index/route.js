@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 /**
- * Index route
+ * The top-level index route
  *
  * @module
  * @augments ember/Route
