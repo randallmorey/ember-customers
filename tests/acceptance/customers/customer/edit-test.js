@@ -17,6 +17,7 @@ test('viewing validation errors', function (assert) {
   fillIn('[name="postalCode"]', '1');
   click('button[type="submit"]');
   andThen(function () {
+    assert.equal(currentURL(), '/customers/1/edit');
     assert.equal(find('.form-group.has-danger:visible').length, 3);
     assert.equal(find('.form-group:eq(0) .form-control-feedback').text(), 'can\'t be blank');
     assert.equal(find('.form-group:eq(1) .form-control-feedback').text(), 'is not a valid email');
@@ -42,7 +43,6 @@ test('saving valid customer instance and redirecting to /', function (assert) {
   });
 });
 
-
 test('navigating away from edit route discards abandoned changes', function (assert) {
   visit('/customers/1/edit');
   andThen(function () {
@@ -54,5 +54,18 @@ test('navigating away from edit route discards abandoned changes', function (ass
   andThen(function () {
     assert.equal(currentURL(), '/customers');
     assert.notEqual(window.server.db.customers[0].name, 'foobar');
+  });
+});
+
+test('deleting a customer instance and redirecting to /', function (assert) {
+  const initialCustomerCount = window.server.db.customers.length;
+  visit('/customers/1/edit');
+  andThen(function () {
+    assert.equal(currentURL(), '/customers/1/edit');
+  });
+  click('.btn-outline-danger');
+  andThen(function () {
+    assert.equal(currentURL(), '/customers');
+    assert.equal(window.server.db.customers.length, initialCustomerCount - 1);
   });
 });

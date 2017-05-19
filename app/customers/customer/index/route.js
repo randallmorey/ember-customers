@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 /**
- * The index route redirects to the edit route.
+ * customers.customer.index redirects to customers.customer.edit and is included
+ * here for flexibility, since the index may not always be for edit.
+ * For example, this route could easily become a "show"-only route.
  *
  * @module
  * @augments ember/Route

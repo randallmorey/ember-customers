@@ -26,5 +26,7 @@ export default function () {
   */
 
   this.get('/customers');
+  this.post('/customers');
   this.patch('/customers/:id');
+  this.del('/customers/:id');
 }
