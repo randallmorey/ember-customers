@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/npm/l/ember-customers.svg?style=flat-square)](https://github.com/randallmorey/ember-customers/blob/master/LICENSE)
 [![Demo URL](https://img.shields.io/badge/demo-available-blue.svg?style=flat-square)](http://ember-customers.s3-website-us-east-1.amazonaws.com)
 
-A simple CRUD application for customer records.
+A simple CRUD application for customer records.  View the demo above.
 
 ## Prerequisites
 
