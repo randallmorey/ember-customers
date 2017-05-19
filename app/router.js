@@ -17,6 +17,7 @@ Router.map(function () {
     this.route('customer', {path: ':customer_id'}, function () {
       this.route('edit');
     });
+    this.route('new');
   });
 });
 

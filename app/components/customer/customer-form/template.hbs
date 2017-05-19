@@ -106,5 +106,7 @@
   </div><!-- /.form-group -->
 
   <button type="submit" class="btn btn-outline-primary">Save</button>
-  <button class="btn btn-outline-danger" {{action 'delete'}}>Delete</button>
+  {{#unless customer.isNew}}
+    <button class="btn btn-outline-danger" {{action 'delete'}}>Delete</button>
+  {{/unless}}
 </form>
