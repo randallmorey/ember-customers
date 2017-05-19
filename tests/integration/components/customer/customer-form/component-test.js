@@ -134,3 +134,16 @@ test('it triggers the external save action on submit if the customer instance is
     this.$('button[type="submit"]').click();
   });
 });
+
+test('it triggers the external delete action on delete', function (assert) {
+  this.set('customer', {
+    hasDirtyAttributes: false
+  });
+  this.set('externalDelete', (deletedCustomer) => {
+    assert.ok(deletedCustomer);
+  });
+  this.render(hbs`{{customer/customer-form customer=customer delete=(action externalDelete)}}`);
+  assert.equal(this.$('.btn-outline-danger:visible').length, 1);
+  // submit form
+  this.$('.btn-outline-danger:visible').click();
+});
