@@ -46,3 +46,33 @@ test('its `saveCustomer` action transitions to the `application` route if the cu
   };
   controller.send('saveCustomer', customer);
 });
+
+test('its `deleteCustomer` action calls `destroyRecord` on the passed customer instance', function (assert) {
+  assert.expect(1);
+  let controller = this.subject();
+  let customer = {
+    destroyRecord() {
+      assert.ok(true, 'customer.destroyRecord() was called');
+      return {
+        then() {}
+      };
+    }
+  };
+  controller.send('deleteCustomer', customer);
+});
+
+test('its `deleteCustomer` action transitions to the `application` route if the customer instance deletes successfully', function (assert) {
+  const done = assert.async();
+  assert.expect(1);
+  let controller = this.subject();
+  controller.transitionToRoute = function (routeName) {
+    assert.equal(routeName, 'application', 'controller.transitionToRoute() was called');
+    done();
+  };
+  let customer = {
+    destroyRecord() {
+      return Promise.resolve();
+    }
+  };
+  controller.send('deleteCustomer', customer);
+});

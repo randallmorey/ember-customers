@@ -42,7 +42,6 @@ test('saving valid customer instance and redirecting to /', function (assert) {
   });
 });
 
-
 test('navigating away from edit route discards abandoned changes', function (assert) {
   visit('/customers/1/edit');
   andThen(function () {
@@ -54,5 +53,18 @@ test('navigating away from edit route discards abandoned changes', function (ass
   andThen(function () {
     assert.equal(currentURL(), '/customers');
     assert.notEqual(window.server.db.customers[0].name, 'foobar');
+  });
+});
+
+test('deleting a customer instance and redirecting to /', function (assert) {
+  const initialCustomerCount = window.server.db.customers.length;
+  visit('/customers/1/edit');
+  andThen(function () {
+    assert.equal(currentURL(), '/customers/1/edit');
+  });
+  click('.btn-outline-danger');
+  andThen(function () {
+    assert.equal(currentURL(), '/customers');
+    assert.equal(window.server.db.customers.length, initialCustomerCount - 1);
   });
 });
